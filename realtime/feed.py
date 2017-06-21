@@ -91,7 +91,7 @@ class Feed:
     """
     This class reads frames in a real time using pyepics, and delivers to consuming process.
     """
-    def __init__(self, dataq):
+    def __init__(self):
         """
         Constructor
 
@@ -101,7 +101,7 @@ class Feed:
         thread_dataq : this queue delivers counter number on change from call back thread
         Other fields are initialized.
         """
-        self.process_dataq = dataq
+        self.process_dataq = Queue()
         self.exitq = tqueue.Queue()
         self.thread_dataq = tqueue.Queue()
         self.sizex = 0
@@ -259,6 +259,7 @@ class Feed:
         data_thread = CAThread(target = self.deliver_data, args=(data_pv, frame_type_pv, logger))
         data_thread.start()
 
+        adapter.start_process(self.process_dataq, logger)
         self.cntr_pv = PV(counter_pv)
         self.cntr_pv.add_callback(self.on_change, index = 1)
 

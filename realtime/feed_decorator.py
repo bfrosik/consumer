@@ -3,8 +3,8 @@ import realtime.adapter as adapter
 from epics import caget
 
 class FeedDecorator(Feed):
-    def __init__(self, dataq, decor):
-        Feed.__init__(self, dataq)
+    def __init__(self, decor):
+        Feed.__init__(self)
         self.decor = decor
 
 

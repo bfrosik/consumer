@@ -54,15 +54,17 @@ The functions in this module are customized for the consuming process. All funct
 are called by the feed module.
 
 """
-
+from multiprocessing import Process
 import util.utilities as utils
 import util.constants as const
+import cons.appl as consumer
 
 
 __author__ = "Barbara Frosik"
 __copyright__ = "Copyright (c) 2016, UChicago Argonne, LLC."
 __docformat__ = 'restructuredtext en'
-__all__ = ['parse_config',
+__all__ = ['start_process',
+           'parse_config',
            'pack_data']
 
 
@@ -78,6 +80,28 @@ class Data:
             self.type = type
             self.theta = theta
             self.something = something
+
+
+def start_process(dataq, logger, *args):
+    """
+    This function parses parameters and starts process consuming frames from feed.
+    This function parses the positional parameters. Then it starts a client process, passing in a queue as first
+    parameter, followed by the parsed parameters. The function of the client process must be included in imports.
+    Parameters
+    ----------
+    dataq : multiprocessing.Queue
+        a queue used to transfer data from feed to client process
+    logger : Logger
+        an instance of Logger, used by the application
+    *args : list
+        a list of posisional parameters required by the client process
+    Returns
+    -------
+    none
+    """
+
+    p = Process(target=consumer.consume, args=(dataq, logger))
+    p.start()
 
 
 def parse_config(config):
