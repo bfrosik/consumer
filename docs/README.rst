@@ -1,1 +1,1 @@
-Consumer example
+Consumer project
