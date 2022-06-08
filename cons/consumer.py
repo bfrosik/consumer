@@ -1,18 +1,12 @@
+"""
+This module contains Consumer class.
+"""
+
 import sys
 import realtime.adapter as adapter
 import util.utilities as utils
 from realtime.feed_decorator import FeedDecorator
 
-"""
-This module is a suite of utility functions.
-"""
-
-import tifffile as tf
-import numpy as np
-import os
-import logging
-import stat
-from functools import reduce
 
 __author__ = "Barbara Frosik"
 __copyright__ = "Copyright (c), UChicago Argonne, LLC."
