@@ -55,9 +55,9 @@ are called by the feed module.
 
 """
 from multiprocessing import Process
-import util.utilities as utils
-import util.constants as const
-import cons.appl as consumer
+import consumer.util.utilities as utils
+import consumer.util.constants as const
+import consumer.appl as consumer
 
 
 __author__ = "Barbara Frosik"

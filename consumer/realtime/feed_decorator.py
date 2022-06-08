@@ -1,5 +1,5 @@
-from realtime.feed import Feed
-import realtime.adapter as adapter
+from consumer.realtime.feed import Feed
+import consumer.realtime.adapter as adapter
 from epics import caget
 
 class FeedDecorator(Feed):

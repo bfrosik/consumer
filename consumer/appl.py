@@ -3,11 +3,8 @@ This module starts consumer.
 """
 
 import sys
-import util.constants as const
-if sys.version[0] == '2':
-    import Queue as queue
-else:
-    import queue as queue
+import consumer.util.constants as const
+import queue
 
 __author__ = "Barbara Frosik"
 __copyright__ = "Copyright (c), UChicago Argonne, LLC."

@@ -4,8 +4,8 @@ This module contains Consumer class.
 
 import sys
 import realtime.adapter as adapter
-import util.utilities as utils
-from realtime.feed_decorator import FeedDecorator
+import consumer.util.utilities as utils
+from consumer.realtime.feed_decorator import FeedDecorator
 
 
 __author__ = "Barbara Frosik"

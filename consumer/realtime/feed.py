@@ -69,12 +69,9 @@ from epics import caget, PV
 from epics.ca import CAThread
 from multiprocessing import Queue
 import numpy as np
-import realtime.adapter as adapter
+import consumer.realtime.adapter as adapter
 import sys
-if sys.version[0] == '2':
-    import Queue as tqueue
-else:
-    import queue as tqueue
+import queue as tqueue
 
 
 
