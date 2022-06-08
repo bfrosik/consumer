@@ -1,3 +1,7 @@
+"""
+This module starts consumer.
+"""
+
 import sys
 import util.constants as const
 if sys.version[0] == '2':
@@ -5,6 +9,10 @@ if sys.version[0] == '2':
 else:
     import queue as queue
 
+__author__ = "Barbara Frosik"
+__copyright__ = "Copyright (c), UChicago Argonne, LLC."
+__docformat__ = 'restructuredtext en'
+__all__ = ['consume']
 
 def consume(q, logger):
     """
