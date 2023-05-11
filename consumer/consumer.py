@@ -16,7 +16,7 @@ __all__ = ['Consumer']
 class Consumer:
     def start_consumer(self, config):
         """
-        This function starts analyzer process and feed.
+        This function starts analyzer process and feed. A
 
         Parameters
         ----------
